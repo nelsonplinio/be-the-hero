@@ -6,7 +6,7 @@
 <h3 align="center">
   💜🦸‍♀️ Be The Hero 🦹‍♂️🆘
 </h3>
-<br>
+<br />
 # Frontend
 <p align="center">
   <a href="#rocket-sobre-o-desafio">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
