@@ -7,7 +7,8 @@
   💜🦸‍♀️ Be The Hero 🦹‍♂️🆘
 </h3>
 <br />
-# Frontend
+<h1> Frontend </h1>
+
 <p align="center">
   <a href="#rocket-sobre-o-desafio">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href='#gear-oque-foi-utilizado'>Oque foi utilizado</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
