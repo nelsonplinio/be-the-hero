@@ -31,6 +31,7 @@ export const TotalIncidentsText = styled.Text`
 export const GreetingContainer = styled.View`
   align-self: stretch;
   margin-top: 16px;
+  margin-bottom: 8px;
 `;
 
 export const GreetingText = styled.Text`

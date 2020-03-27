@@ -81,4 +81,3 @@ Incidents.propTypes = {
   darkTheme: PropTypes.bool.isRequired,
   setDarkTheme: PropTypes.func.isRequired,
 };
-// moon-o FONTAwesome sun-o
