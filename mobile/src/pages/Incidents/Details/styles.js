@@ -56,6 +56,7 @@ export const ActionContainer = styled.View`
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
+  margin-bottom: 16px;
 `;
 
 export const ActionButton = styled(RectButton)`

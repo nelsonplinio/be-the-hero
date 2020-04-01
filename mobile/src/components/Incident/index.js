@@ -13,7 +13,7 @@ import {
   ActionIcon,
 } from './styles';
 
-export default function Incident({ data, showDetail, onPress }) {
+export default function Incident({ data, showDetail, onDetalClick }) {
   const valueFormatted = useMemo(
     () =>
       Intl.NumberFormat('pt-br', {
@@ -51,7 +51,7 @@ export default function Incident({ data, showDetail, onPress }) {
         <>
           <Separator />
 
-          <ActionButton onPress={onPress}>
+          <ActionButton onPress={onDetalClick}>
             <ActionText>Ver mais detalhes</ActionText>
             <ActionIcon name="arrow-forward" />
           </ActionButton>
@@ -73,10 +73,10 @@ Incident.propTypes = {
     uf: PropTypes.string,
   }).isRequired,
   showDetail: PropTypes.bool,
-  onPress: PropTypes.func,
+  onDetalClick: PropTypes.func,
 };
 
 Incident.defaultProps = {
   showDetail: false,
-  onPress: () => {},
+  onDetalClick: null,
 };

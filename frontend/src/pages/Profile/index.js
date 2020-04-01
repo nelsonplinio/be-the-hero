@@ -1,22 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
-
+import React, { useEffect, useState } from 'react';
+import { FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
-
-import logo from '../../assets/logo.svg';
-
-import {
-  Container,
-  Header,
-  RegisterIncidenteButton,
-  LogoutButton,
-  ListIncidents,
-} from './styles';
+import DefaultLayout from '../_layout/default';
+import { ListIncidents, ChatButton } from './styles';
 
 export default function Profile() {
-  const history = useHistory();
-  const ongName = useMemo(() => localStorage.getItem('ongName'), []);
   const [incidents, setIncidents] = useState([]);
 
   useEffect(() => {
@@ -42,25 +30,8 @@ export default function Profile() {
     setIncidents(incidents.filter((incident) => incident.id !== id));
   }
 
-  function handleLogout() {
-    localStorage.clear();
-    history.push('/');
-  }
-
   return (
-    <Container>
-      <Header>
-        <img src={logo} alt="be the hero" />
-        <span>Bem vindo, {ongName}</span>
-
-        <RegisterIncidenteButton to="/incidents/new">
-          Cadastrar novo caso
-        </RegisterIncidenteButton>
-        <LogoutButton onClick={handleLogout}>
-          <FiPower size={19} color="#e02051" />
-        </LogoutButton>
-      </Header>
-
+    <DefaultLayout>
       <h1>Casos cadastrados</h1>
 
       <ListIncidents>
@@ -75,6 +46,8 @@ export default function Profile() {
             <strong>VALOR:</strong>
             <p>{incident.valueFormatted}</p>
 
+            <ChatButton to={`/chats/${incident.id}`}>Conversas</ChatButton>
+
             <button
               type="button"
               onClick={() => handleIncidentDelete(incident.id)}
@@ -84,6 +57,6 @@ export default function Profile() {
           </li>
         ))}
       </ListIncidents>
-    </Container>
+    </DefaultLayout>
   );
 }

@@ -81,6 +81,11 @@ export default function Details() {
                 <ActionText>E-mail</ActionText>
               </ActionButton>
             </ActionContainer>
+            <ActionButton
+              onPress={() => navigation.navigate('ChatRoom', { incident })}
+            >
+              <ActionText>Mensagem</ActionText>
+            </ActionButton>
           </ContactContainer>
         </>
       </Container>

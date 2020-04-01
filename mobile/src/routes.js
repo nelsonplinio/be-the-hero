@@ -8,10 +8,13 @@ import dark from './theme/dark';
 import Incidents from './pages/Incidents';
 import IncidentDetails from './pages/Incidents/Details';
 
+import Chats from './pages/Chats';
+import ChatRoom from './pages/ChatRoom';
+
 const Stack = createStackNavigator();
 
 export default function Routes() {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true);
   return (
     <ThemeProvider theme={darkTheme ? dark : light}>
       <NavigationContainer>
@@ -32,6 +35,8 @@ export default function Routes() {
             )}
           />
           <Stack.Screen name="Details" component={IncidentDetails} />
+          <Stack.Screen name="Chats" component={Chats} />
+          <Stack.Screen name="ChatRoom" component={ChatRoom} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

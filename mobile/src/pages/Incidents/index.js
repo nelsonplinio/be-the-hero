@@ -25,11 +25,14 @@ import {
 
 export default function Incidents({ darkTheme, setDarkTheme }) {
   const navigation = useNavigation();
+
+  const [total, setTotal] = useState(0);
   const [incidents, setIncidents] = useState([]);
 
   useEffect(() => {
     async function loadIncidents() {
       const response = await api.get('/incidents');
+      setTotal(response.data.total);
       setIncidents(response.data.list);
     }
     loadIncidents();
@@ -47,7 +50,7 @@ export default function Incidents({ darkTheme, setDarkTheme }) {
         <TopBar>
           <Logo source={logo} />
           <Right>
-            <TotalIncidentsText>total de 44 casos</TotalIncidentsText>
+            <TotalIncidentsText>total de {total} casos</TotalIncidentsText>
             <ThemeToggle onPress={() => setDarkTheme(!darkTheme)}>
               <Icon name={darkTheme ? 'sun-o' : 'moon-o'} size={24} />
             </ThemeToggle>
@@ -66,7 +69,7 @@ export default function Incidents({ darkTheme, setDarkTheme }) {
           renderItem={({ item: incident }) => (
             <Incident
               data={incident}
-              onPress={() => navigateToDetail(incident)}
+              onDetalClick={() => navigateToDetail(incident)}
             />
           )}
           showsVerticalScrollIndicator={false}

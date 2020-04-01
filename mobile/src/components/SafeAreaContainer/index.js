@@ -9,5 +9,5 @@ export default function SafeAreaContainer({ children }) {
 }
 
 SafeAreaContainer.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
 };

@@ -9,7 +9,7 @@ export const Container = styled.div`
   margin: 32px auto;
 
   h1 {
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 24px;
   }
 `;
@@ -109,10 +109,4 @@ export const ListIncidents = styled.ul`
       }
     }
   }
-`;
-
-export const ChatButton = styled(RegisterIncidenteButton)`
-  position: absolute;
-  right: 16px;
-  bottom: 8px;
 `;
